@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prácticas con Foundation</h1>    
+    <div class="grid-x" style="border: 5px solid green;">
+        <h2 class="cell1 large-4" style="border: 5px solid red;">Elemento 1</h2>
+        <h2 class="cell2 large-4" style="border: 5px solid blue;">Elemento 2</h2>
+        <h2 class="cell3 large-4" style="border: 5px solid purple;">Elemento 3</h2>
+        <div class="grid-x" style="border: 5px solid orange;">
+            <h4 class="cell large-4"> Elemento4 </h4>
+            <h4 class="cell large-4"> Elemento5 </h4>
+            <h4 class="cell large-4"> Elemento6 </h4>
+        </div>
+    </div>
+</body>
+</html>

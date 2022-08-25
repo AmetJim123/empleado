@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+    Agregar nuevo empleado
+{% endblock titulo %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Información nuevo empleado</h1>
+        <div class="cell">
+            <form class="grid-x grid-margin-x" method="POST" enctype="multipart/from-data">{% csrf_token %}
+                <div class="cell large-6">
+                    <label>Nombre:
+                        {{ form.primer_nombre }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label>Apellido:
+                        {{ form.primer_apellido }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label>Trabajo:
+                        {{ form.trabajo }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label>Departamento:
+                        {{ form.departamento }}
+                    </label>
+                </div>
+                <div class="cell large-2">
+                    <label>Habilidades:
+                        {{ form.habilidades }}
+                    </label>
+                </div>
+                <div class="cell large-2">
+                    <label>Foto:
+                        {{ form.avatar }}
+                    </label>
+                </div>
+                <div class="cell">
+                        <button class="submit success button">Aceptar</button>
+                </div>
+                <div class="cell">
+                    <a class="alert button" href="{% url 'persona_app:admin_empleado' %}">Cancelar</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>    
+
+
+
+
+{% endblock content %}
+    
+

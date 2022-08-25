@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block titulo %} Página de sistema de empleados inicio {% endblock titulo %}
+
+
+{% block content %}
+
+{% include 'includes/header.html'%}
+
+<!-- Bloque de bienvenida -->
+  <div class="grid-x aling-center">
+      <h1 class="cell large-12" style="font-size: 20ps; text-align: center;">Bienvenid@ al sistema de registro de empleados y departamentos</h1>
+      <div class="cell large-12" style="text-align: center;">
+          <div class="callout seccess">
+              <h5>En este sistema de registro, usted podrá:
+                Registrar empleados
+                Administrar información de empleados
+                Registrar departamentos
+              </h5>
+              <p>Recuerde que cada nuevo empleado debe tener un nombre, apellido, trabajo y área de trabajo. </p>
+              <a href="add-empleado/">Añadir un nuevo empleado</a>
+            </div>
+      </div>
+  </div>
+
+<!-- Fin bloque de bienvenida -->
+
+<!-- Inicio de la imagen de portada -->
+
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <div class="orbit-wrapper">
+        <div class="orbit-controls">
+            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+        </div>
+        <ul class="orbit-container">
+        <li class="is-active orbit-slide">
+            <figure class="orbit-figure">
+                <a href="{% url 'departamento_app:lista_departamento' %}"><img class="orbit-image" src="{% static 'img/departamento.jpg' %}" style="height: 600px; width: 20    00px;" alt="Space"></a>
+                <figcaption class="orbit-caption">Descubre las áreas de trabajo.</figcaption>
+            </figure>
+        </li>
+        <li class="orbit-slide">
+            <figure class="orbit-figure">
+                <a href="{% url 'persona_app:lista_empleado' %}"><img class="orbit-image" src="{% static 'img/empleados.jpg' %}" style="height: 600px;width: 2000px;"  alt="Space"></a>
+                <figcaption class="orbit-caption">Nuestra familia</figcaption>
+            </figure>
+        </li>
+        </ul>
+        </div>
+    </div>
+
+  <!-- Fin de la imagen de portada     -->
+
+
+{% endblock content %}
+    
+
+
+
+    

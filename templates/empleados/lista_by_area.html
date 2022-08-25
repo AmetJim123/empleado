@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}
+    Lista empleados por departamento
+{% endblock titulo %}
+
+
+{% block content %}
+    {% include "includes/header.html" %}
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">Empleados por área:</div>
+                <form class="cell grid-x grid-margin-x" method="GET">{% csrf_token %}
+                    <div class="cell large-7">
+                        <input type="text" id="kword" name="kword" placeholder="Buscar empleado">
+                    </div>
+                    <div class="cell large-2" >
+                        <button class="submit success button">Buscar</button>
+                    </div>
+                </form>
+                <div class="cell">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th width="200">ID</th>
+                            <th width="150">Nombre</th>
+                            <th width="150">Apellido</th>
+                            <th width="150">Departamento</th>
+                            <th width="150">Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for e in empleados %}
+                            <tr>
+                                <td>{{e.id}}</td>
+                                <td>{{e.primer_nombre}}</td>
+                                <td>{{e.primer_apellido}}</td>
+                                <td>{{e.departamento}}</td>
+                                <td><a class="button warning" href="{% url 'persona_app:ver_empleado' e.id %}">Ver empleado</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+

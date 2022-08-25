@@ -1,0 +1,23 @@
+<h1>Lista empleados por trabajo</h1>
+<c>Recuerde que los códigos de trabajo son:
+    <br>    * 0 - Contador
+    <br>* 1 - Administrador 
+    <br>* 2 - Economista
+    <br>* 3 - Abogado
+    <br>* 4 - Ingeniero
+    <br>* 5 - Otro <br>
+</c>
+
+<form method="get">{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Ingrese código de trabajo">
+    <button type="submit">Buscar</button>
+</form>
+<ul>
+    
+    {% for e in object_list  %}
+        <li>{{ e }}</li>
+    {% endfor %}
+        
+</ul>
+
+
